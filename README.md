@@ -14,15 +14,16 @@ Please verify that the following acceptance criteria are met:
 
 
 # Technologies
-•	Asp.Net MVC  
-•	Onion Structure  
+- Asp.Net MVC  
+- Onion Structure  
 •	Database Layer  
 •	Service Layer  
 •	Models Layer  
 •	Web Project  
-•	Code First Entity Framework  
-•	Dependency Injection: AutoFac  
-•	Unit Test: NUnit & Moq  
+- ASP.NET Globalization and Localization Resources  
+- Code First Entity Framework  
+- Dependency Injection: **AutoFac**  
+- Unit Test: **NUnit & Moq**  
 
 # Administrator credential 
 •	The administrator can see additional menu item “All Subscribers” to display all signed up users.  
