@@ -1,0 +1,32 @@
+﻿@model List<Newsletter.web.Models.SubscriberViewModel>
+@{
+    ViewBag.Title = Resources.Resources.AllSubscribers;
+    int rowIndex = 1;
+}
+
+<h2>@Resources.Resources.AllSubscribers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Resources.Resources.Email</th>
+            <th scope="col">@Resources.Resources.HeardResoucres</th>
+            <th scope="col">@Resources.Resources.ReasonForSignup</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@rowIndex</th>
+            <td>@item.Email</td>
+            <td>@item.HeardFromDescription</td>
+            <td>@item.ReasonForSignup</td>
+        </tr>
+
+        rowIndex++;
+    }
+        
+    </tbody>
+</table>

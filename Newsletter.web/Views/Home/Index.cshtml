@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to our newsletter</h1>
+    <p>@Html.ActionLink(Resources.Resources.SignUp, "SignUp", "Newsletter", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p>
+</div>
