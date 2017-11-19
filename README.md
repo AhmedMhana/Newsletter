@@ -15,7 +15,7 @@ Please verify that the following acceptance criteria are met:
 
 # Technologies
 - Asp.Net MVC  
-- Onion Structure  
+- Onion Architecture  
 •	Database Layer  
 •	Service Layer  
 •	Models Layer  
@@ -26,6 +26,6 @@ Please verify that the following acceptance criteria are met:
 - Unit Test: **NUnit & Moq**  
 
 # Administrator credential 
-•	The administrator can see additional menu item “All Subscribers” to display all signed up users.  
+•	The administrator can see additional menu item “**All Subscribers**” to display all signed up users.  
 Username: admin@admin.com  
 Password: P@$$w0rd
