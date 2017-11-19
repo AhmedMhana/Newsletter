@@ -16,10 +16,17 @@ Please verify that the following acceptance criteria are met:
 # Technologies
 - Asp.Net MVC  
 - Onion Architecture  
-•	Database Layer  
-•	Service Layer  
-•	Models Layer  
-•	Web Project  
+  - Core  
+    - Models  
+    - Services  
+    - Interfaces  
+  - Infrastructure  
+    - Database  
+  - Presentation  
+    - Web Project  
+    - Resources  
+  - Test
+    - Services.Test  
 - ASP.NET Globalization and Localization Resources  
 - Code First Entity Framework  
 - Dependency Injection: **AutoFac**  
