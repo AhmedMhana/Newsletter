@@ -1,12 +1,9 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using DatabaseLayer;
 using Services.IServices;
 using Services.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -31,6 +28,7 @@ namespace Newsletter.web
             // Register dependencies in filter attributes
             builder.RegisterFilterProvider();
 
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterType<SubscriberService>().As<ISubscriberService>();
 
             var container = builder.Build();

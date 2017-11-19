@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="BaseContext.cs" />
     <Compile Include="GenericRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Mapping\SubscriberMap.cs" />
     <Compile Include="Migrations\201711101122346_InitialModel.cs" />
     <Compile Include="Migrations\201711101122346_InitialModel.Designer.cs">

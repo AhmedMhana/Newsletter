@@ -4,8 +4,6 @@ using Services.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Services
 {
@@ -17,12 +15,12 @@ namespace Services.Services
         #endregion
 
         #region Contractor
-        public SubscriberService() : base()
+        public SubscriberService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             _repository = base._unitOfWork.Repository<Subscriber>();
         }
 
-        public SubscriberService(GenericRepository<Subscriber> repository) : base()
+        public SubscriberService(IUnitOfWork unitOfWork,GenericRepository<Subscriber> repository) : base(unitOfWork)
         {
             _repository = repository;
         }
@@ -73,7 +71,6 @@ namespace Services.Services
                 {
                     _repository.Delete(entityInDB);
                     _unitOfWork.Save();
-                    _unitOfWork.Dispose();
                     success = true;
                 }
             }

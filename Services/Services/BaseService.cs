@@ -1,19 +1,19 @@
 ﻿using DatabaseLayer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Services
 {
     public class BaseService : IDisposable
     {
-        protected readonly UnitOfWork _unitOfWork;
+        protected readonly IUnitOfWork _unitOfWork;
 
         public BaseService()
         {
             _unitOfWork = new UnitOfWork();
+        }
+        public BaseService(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
         }
 
         #region Properties and Attributes

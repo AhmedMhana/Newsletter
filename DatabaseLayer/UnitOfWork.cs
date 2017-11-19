@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DatabaseLayer
 {
     /// <summary>
     /// Unit of Work class responsible for DB transactions
     /// </summary>
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         #region Private member variables...
 

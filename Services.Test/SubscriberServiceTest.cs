@@ -8,8 +8,6 @@ using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Test
 {
@@ -41,7 +39,7 @@ namespace Services.Test
             };
 
             _repositoryMock.Setup(md => md.GetAll()).Returns(allSubscribers);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object,_repositoryMock.Object);
 
             //Act
             var result = _subscriberService.GetAll();
@@ -62,7 +60,7 @@ namespace Services.Test
             var actualJson = serializer.Serialize(actualSubscriber);
 
             _repositoryMock.Setup(md => md.GetByID(Id_1)).Returns(actualSubscriber);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object,_repositoryMock.Object);
 
             //Act
             var result = _subscriberService.GetById(Id_1);
@@ -79,7 +77,7 @@ namespace Services.Test
             var actualSubscriber = new Subscriber { Id = Guid.NewGuid(), Email = "email1@admin.com", HeardFrom = HeardFromResources.Advert, ReasonForSignup = "Advert" };
 
             _repositoryMock.Setup(md => md.GetByID(actualSubscriber.Id)).Returns(actualSubscriber);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.GetById(newId);
@@ -94,8 +92,7 @@ namespace Services.Test
             //Arrange
             Subscriber subscriber = new Subscriber { Id = Guid.NewGuid(), Email = "email1@admin.com", HeardFrom = HeardFromResources.Advert, ReasonForSignup = "Advert" };
 
-            //_repositoryMock.Setup(md => md.Insert(subscriber));
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             _subscriberService.Create(subscriber);
@@ -110,7 +107,7 @@ namespace Services.Test
             //Arrange
             Subscriber subscriber = null;
 
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.Create(subscriber);
@@ -127,8 +124,7 @@ namespace Services.Test
             var actualSubscriber = new Subscriber { Id = Id_1, Email = "email1@admin.com", HeardFrom = HeardFromResources.Advert, ReasonForSignup = "Advert" };
 
             _repositoryMock.Setup(md => md.GetByID(Id_1)).Returns(actualSubscriber);
-            //_repositoryMock.Setup(md => md.Update(actualSubscriber));
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             _subscriberService.Update(actualSubscriber);
@@ -145,7 +141,7 @@ namespace Services.Test
             var expectedSubscriber = new Subscriber { Id = Guid.NewGuid(), Email = "email2@admin.com", HeardFrom = HeardFromResources.WordOfMouth, ReasonForSignup = string.Empty };
 
             _repositoryMock.Setup(md => md.GetByID(actualSubscriber.Id)).Returns(actualSubscriber);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             _subscriberService.Update(expectedSubscriber);
@@ -160,7 +156,7 @@ namespace Services.Test
             //Arrange
             Subscriber subscriber = null;
 
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.Update(subscriber);
@@ -176,7 +172,7 @@ namespace Services.Test
             var actualSubscriber = new Subscriber { Id = Guid.NewGuid(), Email = "email1@admin.com", HeardFrom = HeardFromResources.Advert, ReasonForSignup = "Advert" };
 
             _repositoryMock.Setup(md => md.GetByID(actualSubscriber.Id)).Returns(actualSubscriber);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.Delete(actualSubscriber.Id);
@@ -191,7 +187,7 @@ namespace Services.Test
             //Arrange
             Guid subscriberId = Guid.Empty;
 
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.Delete(subscriberId);
@@ -208,7 +204,7 @@ namespace Services.Test
             var expectedSubscriber = new Subscriber { Id = Guid.NewGuid(), Email = "email2@admin.com", HeardFrom = HeardFromResources.WordOfMouth, ReasonForSignup = "WordOfMouth" };
 
             _repositoryMock.Setup(md => md.GetByID(actualSubscriber.Id)).Returns(actualSubscriber);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.Delete(expectedSubscriber.Id);
@@ -230,7 +226,7 @@ namespace Services.Test
             };
 
             _repositoryMock.Setup(md => md.GetAll()).Returns(allSubscribers);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.IsExist(email);
@@ -252,7 +248,7 @@ namespace Services.Test
             };
 
             _repositoryMock.Setup(md => md.GetAll()).Returns(allSubscribers);
-            _subscriberService = new SubscriberService(_repositoryMock.Object);
+            _subscriberService = new SubscriberService(_unitOfWorkMock.Object, _repositoryMock.Object);
 
             //Act
             var result = _subscriberService.IsExist(email);
