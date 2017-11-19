@@ -201,6 +201,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -280,6 +281,10 @@
     <ProjectReference Include="..\DatabaseLayer\DatabaseLayer.csproj">
       <Project>{cf097a9f-e9d5-44a0-8e41-90d4edb81004}</Project>
       <Name>DatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{adbea394-1c4a-46da-9dde-f53893a22e72}</Project>
+      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{ade05096-aa65-4288-8a1a-b8d9ec3c525e}</Project>

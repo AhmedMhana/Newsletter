@@ -1,11 +1,11 @@
 ﻿using DatabaseLayer;
 using Models;
-using Services.IServices;
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Services.Services
+namespace Services
 {
     public class SubscriberService : BaseService, ISubscriberService
     {

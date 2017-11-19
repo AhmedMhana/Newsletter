@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0F77414-BAE4-4017-AD7B-F577DBCD357C}</ProjectGuid>
+    <ProjectGuid>{ADBEA394-1C4A-46DA-9DDE-F53893A22E72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Services</RootNamespace>
-    <AssemblyName>Services</AssemblyName>
+    <RootNamespace>Interfaces</RootNamespace>
+    <AssemblyName>Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,19 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="ISubscriberService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BaseService.cs" />
-    <Compile Include="SubscriberService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseLayer\DatabaseLayer.csproj">
-      <Project>{cf097a9f-e9d5-44a0-8e41-90d4edb81004}</Project>
-      <Name>DatabaseLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{adbea394-1c4a-46da-9dde-f53893a22e72}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{ade05096-aa65-4288-8a1a-b8d9ec3c525e}</Project>
       <Name>Models</Name>

@@ -1,7 +1,7 @@
 ﻿using DatabaseLayer;
 using System;
 
-namespace Services.Services
+namespace Services
 {
     public class BaseService : IDisposable
     {
