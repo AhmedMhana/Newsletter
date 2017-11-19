@@ -15,7 +15,7 @@ Please verify that the following acceptance criteria are met:
 
 # Technologies
 - Asp.Net MVC  
-- Onion Structure  
+- Onion Architecture  
 •	Database Layer  
 •	Service Layer  
 •	Models Layer  
